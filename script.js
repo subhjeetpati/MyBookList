@@ -1,23 +1,38 @@
-let counter = 4
+let counter = 1
 
+let Library = []
 
-function AddBook()
+function Book(counter,name, score) 
 {
-    console.log(counter)
-    let bookDetails = document.getElementById("form")
-    let bookItem = "<td>" + counter+ "." + " </td> "
-    for(let i=0;i<bookDetails.length;i++)
-    {
-        bookItem += "<td> " + bookDetails.elements[i].value + " </td> "
-    }
-
-    console.log(counter)
-    document.getElementById("bookPlace").innerHTML = bookItem;
-    counter++;
-    console.log(counter)
-
-
+    this.counter = counter
+    this.name = name
+    this.score = score    
 }
 
-document.getElementById("addBookBtn").addEventListener("click",AddBook);
+function storeBookInLibrary()
+{
+    let bookDetails = document.getElementById("form")
+    const book = new Book(counter,bookDetails.elements[0].value,bookDetails.elements[1].value)
+    Library.push(book)
+    counter++;
+    displayLibrary()
+}
+
+function displayLibrary() 
+{
+    let bookTable = "<tr><th>S.No. </th> <th>Name</th> <th>Score </th> </tr>"
+    for(let i=0;i<Library.length;i++)
+    {
+        let name = "<tr>"
+        name += "<td> " + Library[i].counter +"." + "</td>"
+        name += "<td> " + Library[i].name  + "</td>"
+        name += "<td> " + Library[i].score + "</td>"
+        name += "</tr>"
+
+        bookTable += name
+    }
+    document.getElementById("bookList").innerHTML = bookTable;
+}
+
+document.getElementById("addBookBtn").addEventListener("click",storeBookInLibrary);
 
