@@ -4,33 +4,46 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css" >
+    <!--link rel="stylesheet" href="./style.css" -->
     <title>MyBookList</title>
 </head>
 <body>
-    <header>
+    <header class="header">
         <h1>My Book List</h1>
         <h5>What books have you read?</h5>
     </header>
 
     <main>
         <form id="form" action="/action_page.php">
-            <input type="text" name="" placeholder="Name of Book">
-            <input type="text" name="score" placeholder="Score">
+            
+            <label for="name">Name</label>
+            <input type="text" id="name" required />
+            
+            <label for="author">Author</label>
+            <input type="text" id="author" required />
+            
+            <label for="score">Score</label>
+            <input type="number" id="score" placeholder="Score" required>
+            
+            <label for="status">Status</label>
+            <select name="status" id="status" >
+              <option value="read">Read</option>
+              <option value="not read">Not read</option>
+            </select>
+
+            <input type="submit" value="submit" />
+
         </form>
-        <button id="addBookBtn"> Add Book </button>
+        
         <div class="main-table"></div>
             <table id="bookList">
                 <tr>
-                    <th>S.No. </th>
-                    <th>Name</th>
+                    <th>Name </th>
+                    <th>Author</th>
                     <th>Score </th>
+                    <th>Status</th>
                 </tr>
-                <tr id="bookPlace">
-                    <td>3.</td>
-                    <td>Boxing</td>
-                    <td>4</td>
-                </tr>
+                <tbody id="book-table-body"></tbody>
             </table>
         </div>
     </main>
@@ -39,6 +52,7 @@
         <p>&#169; 2021 All Rights Reserved.</p>
     </footer>
 
-    <script src="./script.js"></script>
+    <script src="./result.js"></script>
+    <!--cript src="./script.js"></!--cript-->
 </body>
 </html>

@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body
+{
+    display: flex;
+    flex-direction: column;
+    background-color: burlywood;
+}
+
+header{
+    align-self:center;
+    justify-content: center;
+    background-color: cadetblue;
+    width: 100%;
+    text-align: center;
+    font-size: 50px;
+
+}
+
+main{
+    align-self:center;
+    justify-content: center;
+}
+
+footer{
+    align-self:center;
+    position: fixed;
+    bottom: 0%;
+    height: 40px;
+    background-color: cadetblue;
+    width: 100%;
+    padding-top: 1%;
+    text-align: center;
+}
